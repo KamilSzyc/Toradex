@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Wiki - Toradex - git = smartGIT + github.com</title>
+	</head>
+	<body>
+		<h1>git = smartGIT + github.com</h1>
+		<p>W naszym przypadku korzystamy z gita na Ubuntu za pomocą programu <a href="http://www.syntevo.com/smartgit/">smartGit</a>. Aby go używać należy zrealizować poniższe kroki:</p>
+		<ul>
+			<li>Instalujemy smartGit</li>
+			<li>Ściągamy najnowszą wersję JAVA</li>
+			<li>Podmieniamy /usr/bin/java na dowiązanie symboliczne do ściągniętej javy np. /usr/java/.../bin/java</li>
+			<li>Teraz, aby korzystać z eclipse, należy wywołać go ze starszą wersją javy za pomocą polecenia: eclipse  -vm /usr/lib/jvm/default-java/bin</li>
+		</ul>
+
+		<p>Cała nasze repozytorium znajduje się na serwerach <a href="http://github.com">github.com</a>. Jednak nas to, aż tak nie zajmuje, gdyż korzystamy z smartGITa, który wszystko co związane z gitem robi za nas. W celu dodania nowego repozytorium do tego programu należy podać serwer github-a, login: KamilSzyc oraz token, który można uzyskać po zalogowaniu się do serwisu. Hasło standardowe. Gdy wszystko dodamy mamy do wyboru 3 podstawowe operacje:</p>
+		<ul>
+			<li>Pull - pobieramy dane z serwera( należy zawsze wykonać przed przystąpieniem do prac i przed użyciem push )</li>
+			<li>Push - wrzucamy dane na serwer</li>
+			<li>Commit - "zapisujemy wersję lokalnie, która zostanie wrzucona po zrobieniu push"</li>
+		</ul>
+	</body>
+</html>
