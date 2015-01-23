@@ -1,8 +1,19 @@
 #include <iostream>
+#include <unistd.h>
 
-using namespace std;
+#include "./systemControl/GPIO/GPIO.h"
 
 int main(){
-	cout<<"Hello world! KAMIL"<<endl;
-return 0;
+	GPIO ledTest( 89 );
+	ledTest.setDirection( GPIO::OUT_DIRECTION );
+
+	while( true ){
+		usleep( 1000000 );
+		ledTest.setValue( 0 );
+
+		usleep( 1000000 );
+		ledTest.setValue( 1 );
+	}
+
+	return 0;
 }
