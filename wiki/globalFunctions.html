@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Wiki - Toradex - GlobalFunctions</title>
+	</head>
+	<body>
+		<h1>GlobalFunctions</h1>
+		<p>Klasa statyczna z funkcjami dostępnymi z każdego miesca w programie</p>
+		<h3>Plik .*h</h3>
+
+<pre>
+#include < string >
+#include < sstream >
+
+class GlobalFunctions{
+	public:
+		static int 			stringToInt( std::string value );
+		static std::string	intToString( int value );
+};
+</pre>
+		<h3>Opis:</h3>
+		<ul>
+			<li><b>stringToInt( std::string value )</b> - zamiana string value na int -> return</li>
+			<li><b>intToString( int value )</b> - zamiana int value na string -> return </li>
+		</ul>
+		<h3>Przykład:</h3>
+<pre>
+value = GlobalFunctions::stringToInt( resultString );
+</pre>
+		
+	</body>
+</html>

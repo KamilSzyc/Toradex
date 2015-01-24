@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Wiki - Toradex - GPIO</title>
+	</head>
+	<body>
+		<h1>GPIO</h1>
+		<p>Klasa do zarządzania GPIO</p>
+		<h3>Plik .*h</h3>
+<pre>
+#include < string >
+#include "./../FileLinux/FileLinux.h"
+#include "../../other/GlobalFunctions.h"
+
+class GPIO{
+	private:
+		int pad;
+		std::string path;
+		FileLinux fileLinux;
+	public:
+		enum { OUT_DIRECTION	= true };
+		enum { IN_DIRECTION		= false };
+
+		GPIO( int pad );
+		~GPIO();
+
+		void setDirection( bool direction );
+		void setValue( int value );
+		int getValue();
+
+		int getPad();
+};
+</pre>
+		<h3>Opis:</h3>
+		<ul>
+			<li><b>GPIO( int pad )</b> - konstruktor, exportuje podany pad, oraz przypisuje wartości do pól this->pad i this->path</li>
+			<li><b>~GPIO</b> - unexportuje pad</li>
+			<li><b>setDirection( bool direction )</b> - ustawia kierunek pinu( out lub in ). Jako argument należy korzystać z GPIO::OUT_DIRECTION oraz GPIO::IN_DIRECTION</li>
+			<li><b>setState( int value )</b> - ustawia stan na pinie</li>
+			<li><b>getValue</b> - zwraca stan pinu</li>
+			<li><b>getPad()</b> - zrwaca pad</li>
+		</ul>
+		<h3>Przykład:</h3>
+<pre>
+	GPIO led( 89 );
+	GPIO button( 46 );
+
+	led.setDirection( GPIO::OUT_DIRECTION );
+	button.setDirection( GPIO::IN_DIRECTION );
+
+	while( true ){
+		usleep( 10000 );
+		if( button.getValue() == 0 ){
+			led.setValue( 1 );
+		} else {
+			led.setValue( 0 );
+		}
+	}
+</pre>
+
+	</body>
+</html>
